@@ -1,0 +1,133 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background:  linear-gradient(109.6deg, 
+    rgb(36, 45, 57) 11.2%, rgb(16, 37, 60) 51.2%, rgb(0, 0, 0) 98.6%) center center / cover;
+    height: 100vh;
+    font-family: 'Lato', sans-serif;
+}
+
+#container {
+    display: flex;
+    height: 70%;
+    background-color: aliceblue;
+    max-width: 1000px;
+    margin: auto;
+    margin-top: 10rem;
+}
+
+.player-1 {
+ flex: 2;
+ text-align: center;
+ 
+}
+.player-2 { 
+    flex: 2 ; 
+    text-align: center; 
+
+  }
+
+.active { 
+    background-color: #fafafa;
+ }
+ 
+
+.player-text {
+    font-family: 'Lato', sans-serif;
+    text-transform: uppercase;
+    font-size: 3.5rem;
+    font-weight: lighter;
+    letter-spacing: 0.3rem;
+    margin-bottom: 2rem;
+    margin-top: 15rem;
+    
+}
+
+.point {
+    font-size: 7rem;
+    font-weight: lighter;
+    color: brown;
+    margin-bottom: 15rem;
+}
+
+.current{
+    background-color: brown;
+    padding: 1.5rem 3rem;
+    display: inline-block;
+}
+
+.current-label {
+    color: aliceblue;
+    font-size: 1.2rem;
+    margin-bottom: 0.7rem;
+
+}
+
+.current-score{
+    color: aliceblue;
+    font-size: 2.5rem;
+}
+
+#game-tools {
+ flex: 1;
+ text-align: center;
+}
+
+.new-game {
+    margin: 3rem 0 10rem 0;
+    padding: 1rem 2rem;
+    background: none;
+    border: none;
+    font-family: 'Lato', sans-serif;
+    text-transform: uppercase;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+#game-tools i {
+    margin-right: 1rem;
+    color: brown;
+}
+
+.dice {
+    height: 100px;
+    display: block;
+    margin: auto;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.dice-roll {
+    display: block;
+    margin: auto;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    background: none;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    font-weight: lighter;
+    margin-top: 15rem;
+}
+.hold{
+    display: block;
+    margin: auto;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    background: none;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+}
