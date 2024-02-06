@@ -8,17 +8,42 @@ var scores = [0, 0];
 // A variable to save player's round score
 var roundScore = 0
 
-
-// A variable to save dice's movement /Random 1-6/
-
-var dice = Math.floor(Math.random()*6)+1;
-
 //Start version
-document.querySelector('#score-1').textContent ='0';
-document.querySelector('#score-2').textContent = '0';
+document.getElementById('score-1').textContent ='0';
+document.getElementById('score-2').textContent = '0';
 
-document.querySelector('#current-2').textContent ='0';
-document.querySelector('#current-1').textContent = '0';
-document.querySelector(".dice").style.display = 'none';
+document.getElementById('current-2').textContent ='0';
+document.getElementById('current-1').textContent = '0';
 
-console.log('Dice: ' + dice);
+var diceDom =(document.querySelector(".dice"));
+diceDom.style.display = 'none';
+
+//Dice play evenbt listener
+document.querySelector('.dice-roll').addEventListener
+('click', function ()
+{
+    //link to dice img and dice math function
+    var diceNum = Math.floor(Math.random()*6)+1;
+    diceDom.style.display = 'block';
+    diceDom.src = '/img/dice-' + diceNum + '.png';
+
+if(diceNum !== 1) {
+    roundScore = roundScore + diceNum;
+    document.getElementById('current-' + activePlayer).textContent = roundScore;
+}
+else {
+    document.getElementById('current-' + activePlayer).textContent = 0;
+    roundScore = 0;
+     if(activePlayer === 1) {
+        activePlayer = 2;
+     }
+     else{
+        activePlayer = 1;
+     }
+
+     document.querySelector('.player-1').classList.toggle('active');
+     document.querySelector('.player-2').classList.toggle('active');
+    diceDom.style.display = 'none';
+
+}
+});

@@ -19,6 +19,8 @@ body {
     font-family: 'Lato', sans-serif;
 }
 
+
+
 #container {
     display: flex;
     height: 70%;
@@ -39,10 +41,16 @@ body {
 
   }
 
-.active { 
-    background-color: #fafafa;
- }
+.active { background-color: #fafafa;}
+.active .player-text {font-weight: 600;}
  
+.active .player-text::after {
+    color: brown;
+    font-size: 30;
+    content: "\2022";
+  
+    
+}
 
 .player-text {
     font-family: 'Lato', sans-serif;
@@ -86,7 +94,8 @@ body {
 }
 
 .new-game {
-    margin: 3rem 0 10rem 0;
+    /* margin: 3rem 0 15rem 0; */
+    margin-top: 3rem;
     padding: 1rem 2rem;
     background: none;
     border: none;
@@ -106,6 +115,7 @@ body {
     display: block;
     margin: auto;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin-top: -30rem;
 }
 
 .dice-roll {
@@ -119,7 +129,7 @@ body {
     padding: 1rem;
     cursor: pointer;
     font-weight: lighter;
-    margin-top: 15rem;
+    margin-top: 34rem;
 }
 .hold{
     display: block;
