@@ -3,7 +3,7 @@
 var activePlayer = 1;
 
 // A variable to save player's collect score
-var scores = [0, 0];
+var scores = [0, 0, 0];
 
 // A variable to save player's round score
 var roundScore = 0
@@ -18,20 +18,7 @@ document.getElementById('current-1').textContent = '0';
 var diceDom =(document.querySelector(".dice"));
 diceDom.style.display = 'none';
 
-//Dice play evenbt listener
-document.querySelector('.dice-roll').addEventListener
-('click', function ()
-{
-    //link to dice img and dice math function
-    var diceNum = Math.floor(Math.random()*6)+1;
-    diceDom.style.display = 'block';
-    diceDom.src = '/img/dice-' + diceNum + '.png';
-
-if(diceNum !== 1) {
-    roundScore = roundScore + diceNum;
-    document.getElementById('current-' + activePlayer).textContent = roundScore;
-}
-else {
+function switchPlayer(){
     document.getElementById('current-' + activePlayer).textContent = 0;
     roundScore = 0;
      if(activePlayer === 1) {
@@ -40,10 +27,36 @@ else {
      else{
         activePlayer = 1;
      }
-
+     //change red button
      document.querySelector('.player-1').classList.toggle('active');
      document.querySelector('.player-2').classList.toggle('active');
     diceDom.style.display = 'none';
-
 }
+
+
+//Dice play evenbt listener 'roll dice button'
+document.querySelector('.dice-roll').addEventListener
+('click', function ()
+{
+        //link to dice img and dice math function
+        var diceNum = Math.floor(Math.random()*6)+1;
+        diceDom.style.display = 'block';
+        diceDom.src = '/img/dice-' + diceNum + '.png';
+    
+    if(diceNum !== 1) {
+        roundScore = roundScore + diceNum;
+        document.getElementById('current-' + activePlayer).textContent = roundScore;
+    }
+    else {
+        switchPlayer();
+    }
+}
+);
+// hold button
+document.querySelector('.hold').addEventListener
+('click', function(){
+
+    scores[activePlayer] = scores[activePlayer] + roundScore;
+    document.getElementById('score-' + activePlayer).textContent = scores[activePlayer];
+    switchPlayer();
 });
